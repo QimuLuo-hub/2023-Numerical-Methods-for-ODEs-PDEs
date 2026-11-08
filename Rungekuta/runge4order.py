@@ -25,7 +25,7 @@ def rungekutta4(x0, x1, h, y0):
         '''4 order: '''
         k1 = rhs(x[i], y[i])
         k2 = rhs(x[i] + 1/2*h, y[i] + 1/2*h*k1)
-        k3 = rhs(x[i] + 1/2*h, y[i] - 1/2*h*k2)
+        k3 = rhs(x[i] + 1/2*h, y[i] + 1/2*h*k2)
         k4 = rhs(x[i] + h, y[i] + h * k3)
         y[i + 1] = y[i] + h / 6 * (k1 + 2*k2 + 2*k3 + k4)
         '''error'''
